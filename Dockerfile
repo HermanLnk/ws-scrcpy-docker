@@ -1,4 +1,4 @@
-FROM --platform=linux/arm64 node:16
+FROM --platform=linux/arm64 node:18
 MAINTAINER Scavin <scavin@appinn.com>
 
 ENV LANG C.UTF-8
