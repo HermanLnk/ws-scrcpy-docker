@@ -1,3 +1,15 @@
+# OpenWrt
+```
+cd /root
+mkdir ws-scrcpy
+wget https://raw.githubusercontent.com/Haris131/ws-scrcpy-docker/main/Dockerfile -O ws-scrcpy/Dockerfile
+docker build -t ws-scrcpy ws-scrcpy
+
+docker run --name ws-scrcpy -d -p 8000:8000 ws-scrcpy
+
+docker exec ws-scrcpy adb connect android.device.ip:5555
+```
+
 # ws scrcpy 的 Docker 镜像
 
 用来在浏览器中控制 Android 设备。
