@@ -6,8 +6,8 @@ reboot
 
 # OpenWrt ARM64
 
-https://hub.docker.com/r/haris132/ws-scrcpy/
-https://github.com/Haris131/ws-scrcpy-docker/
+* https://hub.docker.com/r/haris132/ws-scrcpy/
+* https://github.com/Haris131/ws-scrcpy-docker/
 
 ```
 docker run --name ws-scrcpy -d -p 8000:8000 haris132/ws-scrcpy
@@ -18,8 +18,8 @@ docker exec ws-scrcpy adb connect android.device.ip:5555
 
 Used to control Android devices in the browser.
 
-https://hub.docker.com/r/scavin/ws-scrcpy/
-https://github.com/scavin/ws-scrcpy-docker/
+* https://hub.docker.com/r/scavin/ws-scrcpy/
+* https://github.com/scavin/ws-scrcpy-docker/
 
 ## use AMD64
 
