@@ -1,44 +1,44 @@
-# OpenWrt
+# Install Docker and Docker-Compose on OpenWrt
 ```
-cd /root
-mkdir ws-scrcpy
-wget https://raw.githubusercontent.com/Haris131/ws-scrcpy-docker/main/Dockerfile -O ws-scrcpy/Dockerfile
-docker build -t ws-scrcpy ws-scrcpy
+opkg update && opkg install docker luci-app-dockerman docker-compose dockerd
+reboot
+```
 
-docker run --name ws-scrcpy -d -p 8000:8000 ws-scrcpy
-
+# OpenWrt ARM64
+```
+docker run --name ws-scrcpy -d -p 8000:8000 haris132/ws-scrcpy
 docker exec ws-scrcpy adb connect android.device.ip:5555
 ```
 
-# ws scrcpy 的 Docker 镜像
+# Docker image of ws scrcpy
 
-用来在浏览器中控制 Android 设备。
+Used to control Android devices in the browser.
 
 https://hub.docker.com/r/scavin/ws-scrcpy/  
 https://github.com/scavin/ws-scrcpy-docker/
 
-## 使用
+## use AMD64
 
 ```
 docker run --name ws-scrcpy -d -p 8000:8000 scavin/ws-scrcpy
 docker exec ws-scrcpy adb connect android.device.ip:5555
 ```
 
-注意修改 android.device.ip 为 Android 设备 IP 地址。
+Pay attention to modify android.device.ip to the IP address of the Android device.
 
-## 打开 Android 设备的 adb over Wi-Fi
+## Turn on adb over Wi-Fi for Android devices
 
-1. 安装 adb 工具套件（[SDK Platform Tools](https://developer.android.com/studio/releases/platform-tools)）
-2. 打开开发者模式
-3. 使用 USB 连接 Android 设备，并授权
-4. 终端输入 `adb tcpip 555`
+1. Install the adb toolkit ([SDK Platform Tools](https://developer.android.com/studio/releases/platform-tools))
+2. Turn on developer mode
+3. Connect the Android device using USB and authorize
+4. Terminal input `adb tcpip 5555`
 
-返回 `restarting in TCP mode port: 5555` 即可.  
-切换回USB模式：`adb usb`
+Just return `restarting in TCP mode port: 5555`.
+Switch back to USB mode: `adb usb`
 
-## 参考链接
+## reference link
 
 * https://github.com/Genymobile/scrcpy
 * https://github.com/NetrisTV/ws-scrcpy
 * https://meta.appinn.net/t/topic/33828
-* https://www.appinn.com/scrcpy-remote/  //用 iPhone 控制 Android
+* https://www.appinn.com/scrcpy-remote/  //Control Android with iPhone
