@@ -14,6 +14,8 @@ docker run --name ws-scrcpy -d -p 8000:8000 haris132/ws-scrcpy
 docker exec ws-scrcpy adb connect android.device.ip:5555
 ```
 
+Pay attention to modify android.device.ip to the IP address of the Android device.
+
 # Docker image of ws scrcpy
 
 Used to control Android devices in the browser.
